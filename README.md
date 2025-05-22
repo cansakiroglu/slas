@@ -36,9 +36,8 @@ slas/
 ## 🚀 Quick Start (with Docker)
 
 ```bash
-mkdir slas
-cd slas
 git clone https://github.com/cansakiroglu/slas.git
+cd slas/docker/
 # For OpenAI models, set your OPENAI_API_KEY in docker-compose.yaml
 # For running models locally with Ollama, ensure your Ollama server is running and model(s) are pulled
 docker-compose up --build [--detach]  # https://docs.docker.com/reference/cli/docker/compose/up/#options  # docker compose instead of docker-compose for macos
