@@ -1,0 +1,23 @@
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/backend.Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../app:/app
+    environment:
+      - TOKENIZERS_PARALLELISM=false
+      - OPENAI_API_KEY=your_openai_api_key  # TODO: Replace with your OpenAI API key
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: docker/frontend.Dockerfile
+    ports:
+      - "8501:8501"
+    volumes:
+      - ../ui:/ui
+    depends_on:
+      - backend
