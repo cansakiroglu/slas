@@ -2,7 +2,7 @@ FROM python:3.10.16-slim
 
 WORKDIR /ui
 
-COPY ../ui /ui
+COPY ./ui /ui
 
 RUN pip install --upgrade pip && pip install -r fe_requirements.txt
 
