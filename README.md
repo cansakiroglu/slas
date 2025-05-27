@@ -42,12 +42,11 @@ python3 -m venv .venv
 source .venv/bin/activate
 # For OpenAI models, set your OPENAI_API_KEY in docker-compose.yaml
 # For running models locally with Ollama, ensure your Ollama server is running and model(s) are pulled
-docker-compose --file docker/docker-compose.yaml up --build --detach  # https://docs.docker.com/reference/cli/docker/compose/up/#options  # docker compose instead of docker-compose for macos
-curl http://localhost:8000/  # Check if backend is ready, may take a few seconds  # Should return {"message":"SLAS is up and running!"}  # Takes longer in macos compared to linux
+docker-compose --file docker/docker-compose.yaml up --build --detach --wait
 ```
 
 - 🌐 Frontend (Streamlit): http://localhost:8501
-- 🖥️ Backend (FastAPI): http://localhost:8000/docs (Swagger)
+- 🖥️ Backend (FastAPI) Swagger: http://localhost:8000/docs
 
 ### To Clean Up
 ```bash
